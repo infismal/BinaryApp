@@ -8,7 +8,7 @@ public class App {
 
         s = DecToBaseConverter.convertToHex(646543);
 
-        System.out.println(s);
+        System.out.println(s  + '\n' + s1);
 
     }
 }

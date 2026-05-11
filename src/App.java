@@ -4,11 +4,13 @@ public class App {
 
         String s, s1;
 
-        s1 = DecToBaseConverter.convert(25, 2);
+        s1 = DecToBaseConverter.convert(73, 2);
 
         s = DecToBaseConverter.convertToHex(646543);
 
-        System.out.println(s  + '\n' + s1);
+        s = BaseToDecConverter.convert("11",8);
+
+        System.out.println(s1  + '\n' + s);
 
     }
 }

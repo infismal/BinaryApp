@@ -8,7 +8,7 @@ public class App {
 
         s2 = DecToBaseConverter.convert(646543, 16);
 
-        s = BaseToDecConverter.convert("B",16);
+        s = BaseToDecConverter.convert("010FE",16);
 
         System.out.println(s  + '\n' + s1 + "\n" + s2);
 

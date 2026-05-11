@@ -2,15 +2,15 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Probando cositas");
 
-        String s, s1;
+        String s, s1, s2;
 
         s1 = DecToBaseConverter.convert(73, 2);
 
-        s = DecToBaseConverter.convertToHex(646543);
+        s2 = DecToBaseConverter.convert(646543, 16);
 
-        s = BaseToDecConverter.convert("11",8);
+        s = BaseToDecConverter.convert("B",16);
 
-        System.out.println(s1  + '\n' + s);
+        System.out.println(s  + '\n' + s1 + "\n" + s2);
 
     }
 }

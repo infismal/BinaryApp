@@ -8,7 +8,7 @@ public class App {
 
         s2 = DecToBaseConverter.convert(646543, 16);
 
-        s = BaseToDecConverter.convert("3456544FEAD",16);
+        s = BaseToDecConverter.convert("565EF",16);
 
         System.out.println(s  + '\n' + s1 + "\n" + s2);
 

@@ -37,7 +37,7 @@ public enum Hex
   }
 
   // Método para obtener el nombre (A, B, C...) según el número
-  public static String getLetter(long number) {
+  public static String getLetter(int number) {
       for (Hex hd : Hex.values()) {
           if (hd.getValue() == number) {
               return hd.getDisplayName();

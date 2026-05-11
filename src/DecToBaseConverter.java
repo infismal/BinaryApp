@@ -1,9 +1,9 @@
 public class DecToBaseConverter 
 {
-  public static String convert(int dec, int base)
+  public static String convert(long dec, int base)
   {
     String str = "";
-    int rema;
+    long rema;
     while (dec >= base) 
     {
       rema = dec%base;

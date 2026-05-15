@@ -6,11 +6,7 @@ public class App {
 
         s1 = DecToBaseConverter.convert(73, 2);
 
-        s2 = DecToBaseConverter.convert(646543, 16);
-
-        s = BaseToDecConverter.convert("010FE",16);
-
-        System.out.println(s  + '\n' + s1 + "\n" + s2);
+        System.out.printf("%s ", s1);
 
     }
 }

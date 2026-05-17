@@ -22,13 +22,7 @@ public class BaseToDecConverter {
         for(i = c.length -1; i > 0; i--) {
             String aux = "" + c[i];
 
-            if( i == 0  && c[i] == '1')
-            {
-                resultado += -Hex.getValueFromChar(aux) * (int)Math.pow(base, exp);
-                break;
-            }
-
-            resultado += Hex.getValueFromChar(aux) * (int)Math.pow(base, exp);
+            resultado += (int)(Hex.getValueFromChar(aux) * (int)Math.pow(base, exp));  //(base, exp);
             exp++;
         }
         

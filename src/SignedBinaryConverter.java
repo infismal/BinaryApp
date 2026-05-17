@@ -10,7 +10,7 @@ public class SignedBinaryConverter {
 
     while( size >= bits)
     {
-      System.out.println("Ajustando tamaño de bits ...");           
+      System.out.println("Ajustando tamaño de bits ...");
 
       if(bits > 32) 
         throw new Exception("mensaje de error genérico");

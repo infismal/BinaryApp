@@ -6,7 +6,11 @@ public class BaseToDecConverter {
         int resultado = 0;
         for(int i = c.length -1; i >= 0; i--) {
             String aux = "" + c[i];
-            resultado += (int)(Hex.getValueFromChar(aux) * Math.pow(base, exp));
+            int val = Hex.getValueFromChar(aux);
+            if (val < 0 || val >= base) {
+                return "Error: dígito '" + aux + "' no válido para base " + base;
+            }
+            resultado += (int)(val * Math.pow(base, exp));
             exp++;
         }
         return "" + resultado;

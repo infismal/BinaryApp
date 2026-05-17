@@ -9,13 +9,15 @@ public class App {
         // System.out.printf("%s ", s1);
 
 
-        System.out.println(SignedBinaryConverter.convertToSignedC2(-65535, 16));
-        System.out.println(SignedBinaryConverter.convertToSignedC2(-0, 2));
-        System.out.println(BaseToDecConverter.revertToBaseInstructive("11111111111111110000000000000001"));
-        System.out.println(DecToBaseConverter.convert(-0, 8));
+        // System.out.println(SignedBinaryConverter.convertToSignedC2(-0, 16));
+        // System.out.println(DecToBaseConverter.convert(-0, 8));
+        // // System.out.println(BaseToDecConverter.revertToBaseInstructive("11111111111111110000000000000001"));
+
         // System.out.println(BaseToDecConverter.revertToBaseInstructive("11111111111111110000000000000001"));
 
-        System.out.println(BaseToDecConverter.revertToBaseInstructive("1000"));
+        AddSubsBinary.normalize(-6, -4, 4);
+
+        System.out.println(AddSubsBinary.addition(AddSubsBinary.add1, AddSubsBinary.add2));
       
 
     }

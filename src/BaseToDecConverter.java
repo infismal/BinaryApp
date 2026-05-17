@@ -24,11 +24,11 @@ public class BaseToDecConverter {
 
             if( i == 0  && c[i] == '1')
             {
-                resultado += -Hex.getValueFromChar(aux) * (int)Math.pow(base, exp);
+                resultado += (int)(-Hex.getValueFromChar(aux) * Math.pow(base, exp));
                 break;
             }
 
-            resultado += Hex.getValueFromChar(aux) * (int)Math.pow(base, exp);
+            resultado += (int)(Hex.getValueFromChar(aux) * (int)Math.pow(base, exp));  //(base, exp);
             exp++;
         }
 

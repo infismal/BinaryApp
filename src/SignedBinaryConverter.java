@@ -5,16 +5,15 @@ public class SignedBinaryConverter {
   public static String convertToSignedC2(int dec, int bits) throws Exception
   { 
 
-    String bin = DecToBaseConverter.convert(Math.abs(dec), base);
+    String bin = DecToBaseConverter.convertToBase(Math.abs(dec), base);
     int size = bin.length();  // actual bits of dec
 
     while( size >= bits)
     {
-      System.out.println("Ajustando tamaño de bits ...");
+      if(bits > 32)  
+        throw new Exception("Error: El número requiere más de 32 bits. No se puede representar.");
 
-      if(bits > 32) 
-        throw new Exception("mensaje de error genérico");
-
+      System.out.println("El número no cabe en " + bits + " bits. Ajustando a " + (bits * 2) + " bits...\n");
       bits = bits * 2;   //4 , 8, 16, 32
     }
 

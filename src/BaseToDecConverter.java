@@ -1,6 +1,6 @@
 public class BaseToDecConverter {
 
-    public static String convert(String num, int base) {
+    public static String convertToDec(String num, int base) {
         char[] c = num.toCharArray();
         int exp = 0;
         int resultado = 0;
@@ -18,9 +18,8 @@ public class BaseToDecConverter {
 
         char[] c = num.toCharArray();
         int exp = 0, resultado = 0, base = 2, i;
-
-        System.out.println("\n=== Revirtiendo C2 a Decimal ===");
-        System.out.println("Binario: " + num);
+        
+        System.out.println("\nBinario: " + num);
         
         for(i = c.length -1; i > 0; i--) {
             String aux = "" + c[i];

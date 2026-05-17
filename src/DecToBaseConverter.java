@@ -14,7 +14,6 @@ public class DecToBaseConverter
     str = dec + str;
     return str;
   }
-
 }
 
 /// test

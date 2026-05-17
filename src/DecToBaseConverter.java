@@ -1,6 +1,6 @@
 public class DecToBaseConverter 
 {
-  public static String convert(int dec, int base)
+  public static String convertToBase(int dec, int base)
   {
     String str = "";
     int rema;

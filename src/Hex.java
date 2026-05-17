@@ -57,5 +57,3 @@ public enum Hex
   }
   
 }
-
-//tes

@@ -2,6 +2,7 @@ public class AddSubsBinary {
 
     public static String add1;
     public static String add2;
+    public static boolean substraction = false;
 
     public static void normalize(int dec1, int dec2, int bits) throws Exception{
 
@@ -22,7 +23,13 @@ public class AddSubsBinary {
 
     }
 
-    public static String addition(String bin1, String bin2){
+    public static String substract(int dec1, int dec2, int bits) throws Exception{
+        normalize(dec1, -dec2, bits);
+        return add(add1, add2);
+
+    }
+
+    public static String add(String bin1, String bin2){
 
         char[] add1 = bin1.toCharArray(), add2 = bin2.toCharArray();
  
@@ -60,10 +67,10 @@ public class AddSubsBinary {
         }
 
         if(overflow){
-            System.out.println("Atención, se ha detectado overflow");
+            System.out.println("Atención, se ha detectado overflow\n");
         }
         if(carryOut==1){
-            System.out.println("Cuidado, la operación arrojó un acarreo");
+            System.out.println("Cuidado, la operación arrojó un acarreo\n");
         }
 
         return result;

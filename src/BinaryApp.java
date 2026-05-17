@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class App {
+public class BinaryApp {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int option = 0;
         String result = null;
 
-        System.out.println("Bienvenido al conversor de Bases - Aritmética y Complemento a 2");
-
+        System.out.println("Bienvenido a BinaryApp");
+        
         do{
             System.out.println();
             System.out.println("1. Convertir decimal a otras bases");
@@ -15,23 +15,19 @@ public class App {
 			System.out.println("3. Convertir entero a complemento a 2");
 			System.out.println("4. Sumar y Restar en complemento a 2");
 			System.out.println("0. Salir");
-			System.out.printf("\nIngresa el número de opción y presiona ENTER: ");
-			option = sc.nextInt();
-			sc.nextLine();
+            option = readInt(sc, "\nIngresa el número de opción y presiona ENTER: ");
             System.out.println();
 			
 			switch(option) {
 			case 1:
-				System.out.printf("Ingresa el decimal que deseas convertir: ");
-				int decimal = sc.nextInt();
+                int decimal = readInt(sc, "Ingresa el decimal que deseas convertir: ");
                 
                 System.out.println("\n ¿A qué base deseas convertir?");
                 System.out.println("1. Binario");
                 System.out.println("2. Octal");
                 System.out.println("3. Decimal");
                 System.out.println("4. Hexadecimal");
-                System.out.printf("\nIngresa el número de tu opción: ");
-				option = sc.nextInt();
+                option = readInt(sc, "\nIngresa el número de tu opción: ");
                 System.out.println();
 
                 switch(option){
@@ -67,8 +63,7 @@ public class App {
 			        System.out.println("2. Octal");
                     System.out.println("3. Decimal");
 			        System.out.println("4. Hexadecimal");
-                    System.out.printf("\nIngresa el número de tu opción: ");
-                    option = sc.nextInt();
+                    option = readInt(sc, "\nIngresa el número de tu opción: ");
                     System.out.println();
 
                     switch(option){
@@ -96,16 +91,14 @@ public class App {
                 break;
 
             case 3:
-                System.out.printf("Ingresa el entero a convertir: ");
-				int entero = sc.nextInt();
+                int entero = readInt(sc, "Ingresa el entero a convertir: ");
 
                     System.out.println("\nIngresa la cantidad de bits que deseas utilizar: ");
                     System.out.println("1. 4 Bits");
 			        System.out.println("2. 8 Bits");
 			        System.out.println("3. 16 Bits");
 			        System.out.println("4. 32 Bits");
-                    System.out.printf("\nIngresa el número de tu opción: ");
-                    option = sc.nextInt();
+                    option = readInt(sc, "\nIngresa el número de tu opción: ");
                     System.out.println();
 
                     switch(option){
@@ -142,8 +135,7 @@ public class App {
 			        System.out.println("2. 8 Bits");
 			        System.out.println("3. 16 Bits");
 			        System.out.println("4. 32 Bits");
-                    System.out.printf("\nIngresa el número de tu opción: ");
-                    int optBits = sc.nextInt();
+                    int optBits = readInt(sc, "\nIngresa el número de tu opción: ");
                     int numBits = 0;
                     switch (optBits) {
                         case 1:
@@ -166,17 +158,14 @@ public class App {
                     System.out.println("\n ¿Qué operación deseas realizar? ");
 			        System.out.println("1. Sumar en complemento a 2");
 			        System.out.println("2. Restar en complemento a 2");
-                    System.out.printf("\nIngresa el número de tu opción: ");
-                    option = sc.nextInt();
+                    option = readInt(sc, "\nIngresa el número de tu opción: ");
                     System.out.println();
 
 
                     switch(option){
                         case 1:
-                            System.out.println("Ingresa el sumando1");
-                            int sumand1 = sc.nextInt();
-			                System.out.println("Ingresa el sumando2");
-                            int sumand2 = sc.nextInt();
+                            int sumand1 = readInt(sc, "Ingresa el sumando1: ");
+                            int sumand2 = readInt(sc, "Ingresa el sumando2: ");
 
                             AddSubsBinary.normalize(sumand1, sumand2, numBits);
                             String total = AddSubsBinary.add(AddSubsBinary.add1, AddSubsBinary.add2);
@@ -184,10 +173,8 @@ public class App {
                             break;
 
                         case 2:
-                            System.out.printf("Ingresa el minuendo: ");
-                            int minuend = sc.nextInt();
-			                System.out.printf("Ingresa el sustraendo: ");
-                            int sustrahend = sc.nextInt();
+                            int minuend = readInt(sc, "Ingresa el minuendo: ");
+                            int sustrahend = readInt(sc, "Ingresa el sustraendo: ");
                             String diference = AddSubsBinary.substract(minuend, sustrahend, numBits);
                             System.out.println("La diferencia es: " + diference);
                             break;
@@ -207,5 +194,17 @@ public class App {
 		
 		sc.close();
       
+    }
+
+    private static int readInt(Scanner sc, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String line = sc.nextLine();
+            try {
+                return Integer.parseInt(line.trim());
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Por favor ingresa un número entero.");
+            }
+        }
     }
 }

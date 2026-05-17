@@ -1,7 +1,7 @@
 public class AddSubsBinary {
 
-    public static char[] add1;
-    public static char[] add2;
+    public static String add1;
+    public static String add2;
 
     public static void normalize(int dec1, int dec2, int bits) throws Exception{
 
@@ -15,18 +15,17 @@ public class AddSubsBinary {
 	    }else if(bin2.length() > bin1.length()){
 
 	    	bin1 = SignedBinaryConverter.convertToSignedC2(dec1, bin2.length());
+	    }
 
-	    	}
-
-        add1 = bin1.toCharArray();
-        add2 =bin2.toCharArray();
+        add1 = bin1;
+        add2 = bin2;
 
     }
 
+    public static String addition(String bin1, String bin2){
 
-    
-    public static String addition(char[] add1, char[] add2){
-
+        char[] add1 = bin1.toCharArray(), add2 = bin2.toCharArray();
+ 
         int carryIn = 0;
         int carryOut = 0;
 

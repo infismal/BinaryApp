@@ -27,11 +27,9 @@ public class SignedBinaryConverter {
     
     if(dec >= 0)
       return bin;
-    else
-    {
 
-      return negate(bin);
-    }
+    return negate(bin);
+    
       
   }
 
@@ -52,7 +50,7 @@ public class SignedBinaryConverter {
       str = c[j] + str;
     }
 
-    System.out.println(str);
+    // System.out.println(str); : // debug
     return str; 
   }
 

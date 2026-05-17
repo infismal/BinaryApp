@@ -6,7 +6,7 @@ public class BaseToDecConverter {
         int resultado = 0;
         for(int i = c.length -1; i >= 0; i--) {
             String aux = "" + c[i];
-            resultado += Hex.getValueFromChar(aux) * (int)Math.pow(base, exp);
+            resultado += (int)(Hex.getValueFromChar(aux) * Math.pow(base, exp));
             exp++;
         }
         return "" + resultado;
@@ -19,12 +19,12 @@ public class BaseToDecConverter {
         char[] c = num.toCharArray();
         int exp = 0, resultado = 0, base = 2, i;
 
-        System.out.println("\n=== Revirtiendo Ca2 a Decimal ===");
+        System.out.println("\n=== Revirtiendo C2 a Decimal ===");
         System.out.println("Binario: " + num);
         
         for(i = c.length -1; i > 0; i--) {
             String aux = "" + c[i];
-            int bitValue = Hex.getValueFromChar(aux) * (int)Math.pow(base, exp);
+            int bitValue = (int)(Hex.getValueFromChar(aux) * Math.pow(base, exp));
             resultado += bitValue;
             System.out.println("Bit " + exp + ": " + aux + " * 2^" + exp + " = " + bitValue);
             exp++;

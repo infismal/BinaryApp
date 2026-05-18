@@ -15,5 +15,3 @@ public class DecToBaseConverter
     return str;
   }
 }
-
-/// test

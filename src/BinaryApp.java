@@ -56,8 +56,9 @@ public class BinaryApp {
                 break;
 				
 			case 2:
-                    System.out.printf("\nIngresa el número que deseas convertir: ");
+                    System.out.printf("\nIngresa el número que deseas convertir a decimal: ");
                     String num = sc.next();
+                    sc.nextLine();
                     System.out.println("\n ¿A qué sistema numérico pertenece el número que ingresaste?");
 			        System.out.println("1. Binario");
 			        System.out.println("2. Octal");

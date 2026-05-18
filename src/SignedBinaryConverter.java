@@ -14,7 +14,7 @@ public class SignedBinaryConverter {
         throw new Exception("Error: El número requiere más de 32 bits. No se puede representar.");
 
       System.out.println("El número no cabe en " + bits + " bits. Ajustando a " + (bits * 2) + " bits...\n");
-      bits = bits * 2;   //4 , 8, 16, 32
+      bits = bits * 2;   //8, 16, 32
     }
 
     int leftOverBits = bits - size;  // bits a rellenar

@@ -1,6 +1,18 @@
 import java.util.Scanner;
 
 public class BinaryApp {
+    /**
+     * Método principal que inicia la aplicación BinaryApp.
+     * Muestra un menú interactivo que permite al usuario:
+     * 1. Convertir decimales a otras bases (binario, octal, hexadecimal)
+     * 2. Convertir de otras bases a decimal
+     * 3. Convertir enteros a complemento a 2
+     * 4. Realizar sumas y restas en complemento a 2
+     * El programa continúa hasta que el usuario selecciona la opción 0 para salir.
+     * 
+     * @param args argumentos de línea de comandos (no utilizados)
+     * @throws Exception si ocurre un error en las conversiones
+     */
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int option = 0;
@@ -56,8 +68,9 @@ public class BinaryApp {
                 break;
 				
 			case 2:
-                    System.out.printf("\nIngresa el número que deseas convertir: ");
+                    System.out.printf("\nIngresa el número que deseas convertir a decimal: ");
                     String num = sc.next();
+                    sc.nextLine();
                     System.out.println("\n ¿A qué sistema numérico pertenece el número que ingresaste?");
 			        System.out.println("1. Binario");
 			        System.out.println("2. Octal");
@@ -196,6 +209,14 @@ public class BinaryApp {
       
     }
 
+    /**
+     * Lee un número entero desde la entrada del usuario con validación.
+     * Si el usuario ingresa un valor no válido, solicita nuevamente la entrada.
+     * 
+     * @param sc el Scanner para leer la entrada del usuario
+     * @param prompt el mensaje a mostrar al usuario
+     * @return el número entero validado ingresado por el usuario
+     */
     private static int readInt(Scanner sc, String prompt) {
         while (true) {
             System.out.print(prompt);

@@ -29,6 +29,13 @@ public enum Hex
 
   public int getValue(){return value;}
 
+  /**
+   * Obtiene el nombre de visualización de este valor hexadecimal.
+   * Elimina el guion bajo de los números (ej: _0 → 0)
+   * Retorna las letras tal como están (A, B, C, etc.)
+   * 
+   * @return una cadena con el nombre de visualización (0-9 o A-F)
+   */
   private String getDisplayName() {
     if (this.name().startsWith("_")) {
         return this.name().substring(1); // Remove the leading underscore
@@ -36,7 +43,12 @@ public enum Hex
     return this.name(); // Return the name as is for A-F
   }
 
-  // Método para obtener el nombre (A, B, C...) según el número
+  /**
+   * Convierte un valor numérico (0-15) a su representación hexadecimal (0-9 o A-F).
+   * 
+   * @param number el valor numérico a convertir (0-15)
+   * @return una cadena con la representación hexadecimal (0-9 o A-F)
+   */
   public static String getLetter(int number) {
       for (Hex hd : Hex.values()) {
           if (hd.getValue() == number) {
@@ -46,6 +58,12 @@ public enum Hex
       return String.valueOf(number); // Retorna el número si es 0-9
   }
 
+  /**
+   * Convierte un carácter hexadecimal (0-9 o A-F) a su valor numérico (0-15).
+   * 
+   * @param c el carácter hexadecimal como cadena (0-9 o A-F)
+   * @return el valor numérico (0-15), o -1 si no es un carácter válido
+   */
   public static int getValueFromChar(String c)
   {
     for (Hex hd : Hex.values()) {

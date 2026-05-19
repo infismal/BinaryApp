@@ -2,6 +2,17 @@ public class SignedBinaryConverter {
 
   private static final int base = 2;
 
+  /**
+   * Convierte un número decimal a su representación en complemento a 2 con una cantidad específica de bits.
+   * Para números positivos, simplemente convierte a binario y rellena con ceros.
+   * Para números negativos, aplica el complemento a 2 (invierte bits a partir del primer 1).
+   * Si el número no cabe en los bits especificados, dobla automáticamente la cantidad de bits (máximo 32).
+   * 
+   * @param dec el número decimal a convertir (puede ser positivo o negativo)
+   * @param bits la cantidad de bits deseados (4, 8, 16 o 32)
+   * @return una cadena con la representación binaria en complemento a 2
+   * @throws Exception si el número requiere más de 32 bits
+   */
   public static String convertToSignedC2(int dec, int bits) throws Exception
   { 
 
@@ -32,7 +43,15 @@ public class SignedBinaryConverter {
       
   }
 
-  private static String negate(String bin)       // 00001001010
+  /**
+   * Aplica el complemento a 2 a un número binario.
+   * Algoritmo: encuentra el primer 1 desde la derecha, lo mantiene, y invierte todos los bits a su izquierda.
+   * Esto es equivalente a invertir todos los bits y sumar 1.
+   * 
+   * @param bin el número binario al cual aplicar complemento a 2
+   * @return una cadena con el complemento a 2 del número binario
+   */
+  private static String negate(String bin)
   {
     char[] c = bin.toCharArray(); int i;
     String str = "";
